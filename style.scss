@@ -1,0 +1,117 @@
+@use 'variables';
+@use 'resets';
+
+body{
+    font-family: var(--ff-sans);
+    font-weight: var(--fw-normal);
+    font-size: var(--fs-400);
+    background-color: var(--clr-neutral-100);
+    color: var(--clr-neutral-400);
+    display: flex;
+    flex-direction: column;
+    line-height: 1.7;
+}
+
+.header{
+    margin-block: 5rem 4rem;
+    margin-inline: auto;
+    max-width: 505px;
+    text-align: center;
+
+    &__heading{
+        font-weight: var(--fw-light);
+        color: var(--clr-neutral-900);
+        line-height: 1.4;
+        font-size: var(--fs-900);
+        margin-bottom: 1rem;
+
+        span{
+            display: block;
+            font-weight: var(--fw-bold);
+        }
+    }
+}
+
+.main{
+    max-width: 1110px;
+    margin-inline: auto;
+    display: flex;
+    gap: var(--gap);
+
+    &__col{
+        flex: 1;
+        display: grid;
+        gap: var(--gap);
+        align-items: center;
+    }
+
+    &__card{
+        padding: 2rem;
+        border-radius: 0.25rem;
+        border-top: 4px solid;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;;
+
+
+        &--cyan{
+            border-color: var(--clr-cyan);
+        }
+
+        &--red{
+            border-color: var(--clr-red);
+        }
+
+        &--orange{
+            border-color: var(--clr-orange);
+        }
+
+        &--blue{
+            border-color: var(--clr-blue);
+        }
+    }
+
+    &__heading{
+        font-size: 1.25rem;
+        color: var(--clr-neutral-900);
+        font-weight: var(--fw-bold);
+        margin-bottom: 0.75rem;
+    }
+
+    &__logo{
+        margin-top: 2.25rem;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width:70em){
+
+    :root{
+        --gap: 1.5rem;
+        --fs-900: 1.5rem
+    }
+
+    .header{
+        padding-inline: 2rem;
+        margin-bottom: 4.5rem;
+        
+        &__heading{
+            font-size: var(--fs-900);
+            margin-bottom: 0.75rem;
+        }
+    }
+    .main{
+        padding-inline: 2rem;
+        flex-direction: column;
+
+        &__card{
+            padding: 1.5rem;
+        }
+
+        &__heading{
+            margin-bottom: 0.5rem;
+        }
+
+        &__logo{
+            margin-top: 1.75rem;
+        }
+    }
+}
